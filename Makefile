@@ -1,12 +1,16 @@
 CC=gcc
-C_HEADER_FILES=./src/c_files/libcpu.c
-C_DEST_FILES=./out/libcpu.o
+CFLAGS=-Wall -Wextra -Wpedantic -g
+C_DEST_FILES := ./out/libcpu.o ./out/libmem.o
 
-compile: $(C_DEST_FILES) $(C_HEADER_FILES) 
-	@ $(CC) $(C_DEST_FILES) -o main ./src/main.c
 
-$(C_DEST_FILES): $(C_HEADER_FILES)
-	@ $(CC) -c $(C_HEADER_FILES) -o $(C_DEST_FILES)
+compile: $(C_DEST_FILES) 
+	@ if [ ! -d ./out ]; then mkdir out; fi
+	@ $(CC) $(C_DEST_FILES) $(CFLAGS) -o main ./src/main.c
 
+./out/libcpu.o: ./src/c_files/libcpu.c
+	@ $(CC) -c $^ -o $@
+
+./out/libmem.o: ./src/c_files/libmem.c
+	@ $(CC) -c $^ -o $@
 clean:
-	@ rm ./out/*
+	@ rm -rf ./out/

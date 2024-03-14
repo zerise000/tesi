@@ -23,6 +23,10 @@ typedef struct {
 } RiscV;
 
 void init_registers(RiscV* cpu);
-void gen_control_signals(RiscV* cpu,uint8_t opcode);
+void gen_control_signals(RiscV* cpu,uint32_t instr);
+uint8_t gen_ALU_signal(RiscV* cpu,uint32_t instr);
+uint64_t get_first_operand(RiscV* cpu,uint32_t instr);
+uint64_t get_second_operand(RiscV* cpu,uint32_t instr);
+void sum(RiscV* cpu,uint64_t r1,uint64_t r2,uint8_t ALU_code,uint32_t instr);
 
 #endif

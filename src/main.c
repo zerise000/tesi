@@ -1,21 +1,6 @@
-#include <stdio.h>
-#include <stdint.h>
-#include <stdbool.h>
 #include "h_files/libcpu.h"
-
-#define MEM_SIZE 4096
-
-typedef struct{
-	uint8_t buffer[MEM_SIZE];
-} Memory;
-
-
-void init_mem(Memory* mem){
-	for(size_t i=0; i<MEM_SIZE; i++){
-		mem->buffer[i] = 0;
-	}
-}
-
+#include "h_files/libmem.h"
+#include <stdint.h>
 
 int main(){
 	RiscV cpu;
@@ -24,10 +9,18 @@ int main(){
 	init_registers(&cpu);
 	init_mem(&mem);
 
-	uint32_t instr = 0x00000133;
-	uint8_t opcode = instr & 0x000007F;
+	mem.buffer[0] = 0x33;
+	mem.buffer[1] = 0x01;
 
-	gen_control_signals(&cpu,opcode);
-	
+	uint32_t instr = fetch(&mem,0); 
+
+	gen_control_signals(&cpu,instr);
+	uint8_t ALU_signal = gen_ALU_signal(&cpu,instr);	
+
+	uint64_t op1 = get_first_operand(&cpu,instr);
+	uint64_t op2 = get_second_operand(&cpu,instr);
+
+	sum(&cpu,op1,op2,ALU_signal,instr);
+
 	return 0;
 }
