@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="libcpu.c" path="/home/mattia/uni/tesi/src/c_files/libcpu.c"/>
+    <originFiles name="libcpu.h" path="/home/mattia/uni/tesi/src/h_files/libcpu.h"/>
+    <originFiles name="libmem.c" path="/home/mattia/uni/tesi/src/c_files/libmem.c"/>
+    <originFiles name="libmem.h" path="/home/mattia/uni/tesi/src/h_files/libmem.h"/>
+  </source>
+  <testbench>
+    <originFiles name="main.c" path="/home/mattia/uni/tesi/src/main.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

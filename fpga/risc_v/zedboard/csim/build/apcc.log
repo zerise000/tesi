@@ -1,0 +1,7 @@
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2023.1/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'mattia' on host 'mattia' (Linux_x86_64 version 6.5.0-26-generic) on Sun Apr 14 18:08:14 CEST 2024
+INFO: [HLS 200-10] On os Ubuntu 22.04.4 LTS
+INFO: [HLS 200-10] In directory '/home/mattia/uni/tesi/fpga/risc_v/zedboard/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_mattia/123901713110894670975
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 1.6 seconds. Total CPU system time: 0.18 seconds. Total elapsed time: 1.63 seconds; peak allocated memory: 99.020 MB.

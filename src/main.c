@@ -3,24 +3,29 @@
 #include <stdint.h>
 
 int main(){
-	RiscV cpu;
+
+	Arch cpu;
 	Memory mem;
 
 	init_registers(&cpu);
 	init_mem(&mem);
 
-	mem.buffer[0] = 0x33;
-	mem.buffer[1] = 0x01;
+	cpu.registers[3] = 3;
+	cpu.registers[4] = 4;
 
-	uint32_t instr = fetch(&mem,0); 
+	mem.instr_buff[0] = 0x63;
+	mem.instr_buff[1] = 0x94;
+	mem.instr_buff[2] = 0x20;
+	mem.instr_buff[3] = 0x00;
 
-	gen_control_signals(&cpu,instr);
-	uint8_t ALU_signal = gen_ALU_signal(&cpu,instr);	
+	cpu.instr = fetch(mem,0); 
 
-	uint64_t op1 = get_first_operand(&cpu,instr);
-	uint64_t op2 = get_second_operand(&cpu,instr);
+	def_immediate(&cpu);
+	gen_control_signals(&cpu);
+	uint8_t ALU_signal = gen_ALU_signal(&cpu);	
 
-	sum(&cpu,op1,op2,ALU_signal,instr);
-
+	uint64_t res = sum(&cpu,ALU_signal);
+	handle_result(&cpu,&mem,res);		
+	
 	return 0;
 }

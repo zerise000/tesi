@@ -1,7 +1,6 @@
 CC=gcc
 CFLAGS=-Wall -Wextra -Wpedantic -g
-C_DEST_FILES := ./out/libcpu.o ./out/libmem.o
-
+C_DEST_FILES := ./out/libmem.o ./out/libcpu.o 
 
 compile: $(C_DEST_FILES) 
 	@ if [ ! -d ./out ]; then mkdir out; fi
