@@ -1,0 +1,12 @@
+digraph "CFG for 'hls::stream\<unsigned int, 0\>::read' function" {
+	label="CFG for 'hls::stream\<unsigned int, 0\>::read' function";
+
+	Node0x4475c20 [shape=record,filename="",linenumber="",label="{entry.predFake}"];
+	Node0x4475c20 -> Node0x43ae4f0[ callList="" memoryops="" filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h" execusionnum="2"];
+	Node0x43ae4f0 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h",linenumber="468",label="{entry.succFake|{<s0>T|<s1>F}}"];
+	Node0x43ae4f0:s0 -> Node0x4476650[label="W:3"];
+	Node0x43ae4f0:s1 -> Node0x4476650[label="W:1" callList="" memoryops="" filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h" execusionnum="0"];
+	Node0x4476650 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h",linenumber="470",label="{if.end.predFake}"];
+	Node0x4476650 -> Node0x43ae7f0[ callList="" memoryops="" filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h" execusionnum="2"];
+	Node0x43ae7f0 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h",linenumber="470",label="{if.end.succFake}"];
+}

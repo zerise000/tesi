@@ -1,0 +1,7 @@
+digraph "CFG for 'hls::stream\<unsigned long, 0\>::size' function" {
+	label="CFG for 'hls::stream\<unsigned long, 0\>::size' function";
+
+	Node0x46176f0 [shape=record,filename="",linenumber="",label="{entry.predFake}"];
+	Node0x46176f0 -> Node0x47c4810[ callList="" memoryops="" filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h" execusionnum="1"];
+	Node0x47c4810 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h",linenumber="503",label="{entry.succFake}"];
+}

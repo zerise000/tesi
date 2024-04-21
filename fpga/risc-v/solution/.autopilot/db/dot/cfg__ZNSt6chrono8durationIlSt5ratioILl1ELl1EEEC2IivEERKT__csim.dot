@@ -1,0 +1,7 @@
+digraph "CFG for 'std::chrono::duration\<long, std::ratio\<1l, 1l\> \>::duration\<int, void\>' function" {
+	label="CFG for 'std::chrono::duration\<long, std::ratio\<1l, 1l\> \>::duration\<int, void\>' function";
+
+	Node0x4625010 [shape=record,filename="",linenumber="",label="{entry.predFake}"];
+	Node0x4625010 -> Node0x47c70f0[ callList="" memoryops="" filename="/tools/Xilinx/Vitis_HLS/2023.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/chrono" execusionnum="1"];
+	Node0x47c70f0 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/chrono",linenumber="334",label="{entry.succFake}"];
+}

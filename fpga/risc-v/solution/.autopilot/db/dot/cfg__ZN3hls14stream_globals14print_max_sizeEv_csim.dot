@@ -1,0 +1,7 @@
+digraph "CFG for 'hls::stream_globals::print_max_size' function" {
+	label="CFG for 'hls::stream_globals::print_max_size' function";
+
+	Node0x465f2e0 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h",linenumber="80",label="{entry.predFake}"];
+	Node0x465f2e0 -> Node0x47ccc90[ callList="" memoryops="" filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h" execusionnum="1"];
+	Node0x47ccc90 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h",linenumber="82",label="{entry.succFake}"];
+}

@@ -1,0 +1,7 @@
+digraph "CFG for 'void std::allocator_traits\<std::allocator\<std::__detail::_Hash_node\<std::pair\<void* const, hls::stream_entity\<4ul\> \>, false\> \> \>::construct\<std::pair\<void* const, hls::stream_entity\<4ul\> \>, std::piecewise_construct_t const&, std::tuple\<void* const&\>, std::tuple\<\> \>' function" {
+	label="CFG for 'void std::allocator_traits\<std::allocator\<std::__detail::_Hash_node\<std::pair\<void* const, hls::stream_entity\<4ul\> \>, false\> \> \>::construct\<std::pair\<void* const, hls::stream_entity\<4ul\> \>, std::piecewise_construct_t const&, std::tuple\<void* const&\>, std::tuple\<\> \>' function";
+
+	Node0x454bf40 [shape=record,filename="",linenumber="",label="{entry.predFake}"];
+	Node0x454bf40 -> Node0x4787840[ callList="" memoryops="" filename="/tools/Xilinx/Vitis_HLS/2023.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/bits/alloc_traits.h" execusionnum="4"];
+	Node0x4787840 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/bits/alloc_traits.h",linenumber="475",label="{entry.succFake}"];
+}

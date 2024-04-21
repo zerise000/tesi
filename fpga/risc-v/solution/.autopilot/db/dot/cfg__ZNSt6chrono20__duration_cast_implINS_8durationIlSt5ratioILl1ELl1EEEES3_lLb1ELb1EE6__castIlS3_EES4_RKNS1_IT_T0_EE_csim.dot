@@ -1,0 +1,7 @@
+digraph "CFG for 'std::chrono::duration\<long, std::ratio\<1l, 1l\> \> std::chrono::__duration_cast_impl\<std::chrono::duration\<long, std::ratio\<1l, 1l\> \>, std::ratio\<1l, 1l\>, long, true, true\>::__cast\<long, std::ratio\<1l, 1l\> \>' function" {
+	label="CFG for 'std::chrono::duration\<long, std::ratio\<1l, 1l\> \> std::chrono::__duration_cast_impl\<std::chrono::duration\<long, std::ratio\<1l, 1l\> \>, std::ratio\<1l, 1l\>, long, true, true\>::__cast\<long, std::ratio\<1l, 1l\> \>' function";
+
+	Node0x4654990 [shape=record,filename="",linenumber="",label="{entry.predFake}"];
+	Node0x4654990 -> Node0x47cb760[ callList="" memoryops="" filename="/tools/Xilinx/Vitis_HLS/2023.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/chrono" execusionnum="1"];
+	Node0x47cb760 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/chrono",linenumber="142",label="{entry.succFake}"];
+}

@@ -1,0 +1,7 @@
+digraph "CFG for 'Bus_lines::~Bus_lines' function" {
+	label="CFG for 'Bus_lines::~Bus_lines' function";
+
+	Node0x44766a0 [shape=record,filename="",linenumber="",label="{entry.predFake}"];
+	Node0x44766a0 -> Node0x43ae8a0[ callList="" memoryops="" filename="../../../../../src/main.cpp" execusionnum="0"];
+	Node0x43ae8a0 [shape=record,filename="../../../../../src/main.cpp",linenumber="7",label="{entry.succFake}"];
+}

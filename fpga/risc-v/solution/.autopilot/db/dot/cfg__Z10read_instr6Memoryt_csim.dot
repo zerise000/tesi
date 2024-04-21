@@ -1,0 +1,7 @@
+digraph "CFG for 'read_instr' function" {
+	label="CFG for 'read_instr' function";
+
+	Node0x475fda0 [shape=record,filename="",linenumber="",label="{entry.predFake}"];
+	Node0x475fda0 -> Node0x47b0c90[ callList="" memoryops="" filename="../../../../../src/cpp_files/libmem.cpp" execusionnum="0"];
+	Node0x47b0c90 [shape=record,filename="../../../../../src/cpp_files/libmem.cpp",linenumber="12",label="{entry.succFake}"];
+}

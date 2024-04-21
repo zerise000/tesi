@@ -1,0 +1,7 @@
+digraph "CFG for 'hls::stream\<unsigned long, 0\>::get_entity' function" {
+	label="CFG for 'hls::stream\<unsigned long, 0\>::get_entity' function";
+
+	Node0x459fb40 [shape=record,filename="",linenumber="",label="{entry.predFake}"];
+	Node0x459fb40 -> Node0x4794630[ callList="" memoryops="" filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h" execusionnum="2"];
+	Node0x4794630 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h",linenumber="410",label="{entry.succFake}"];
+}

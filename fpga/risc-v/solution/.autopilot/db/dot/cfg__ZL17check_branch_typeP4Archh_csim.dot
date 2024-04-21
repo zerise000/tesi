@@ -1,0 +1,12 @@
+digraph "CFG for 'check_branch_type' function" {
+	label="CFG for 'check_branch_type' function";
+
+	Node0x4734e90 [shape=record,filename="",linenumber="",label="{entry.predFake}"];
+	Node0x4734e90 -> Node0x47ac950[ callList="" memoryops="" filename="../../../../../src/cpp_files/libcpu.cpp" execusionnum="0"];
+	Node0x47ac950 [shape=record,filename="../../../../../src/cpp_files/libcpu.cpp",linenumber="11",label="{entry.succFake|{<s0>T|<s1>F}}"];
+	Node0x47ac950:s0 -> Node0x462f690[ callList="" memoryops="" filename="../../../../../src/cpp_files/libcpu.cpp" execusionnum="0"];
+	Node0x47ac950:s1 -> Node0x462f690;
+	Node0x462f690 [shape=record,filename="../../../../../src/cpp_files/libcpu.cpp",linenumber="16",label="{if.end.predFake}"];
+	Node0x462f690 -> Node0x47ad010[ callList="" memoryops="" filename="../../../../../src/cpp_files/libcpu.cpp" execusionnum="0"];
+	Node0x47ad010 [shape=record,filename="../../../../../src/cpp_files/libcpu.cpp",linenumber="16",label="{if.end.succFake}"];
+}

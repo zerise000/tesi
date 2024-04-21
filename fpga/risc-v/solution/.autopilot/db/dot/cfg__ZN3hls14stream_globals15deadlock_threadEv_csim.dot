@@ -1,0 +1,26 @@
+digraph "CFG for 'hls::stream_globals::deadlock_thread' function" {
+	label="CFG for 'hls::stream_globals::deadlock_thread' function";
+
+	Node0x465a8d0 [shape=record,filename="",linenumber="",label="{entry.predFake}"];
+	Node0x465a8d0 -> Node0x465a920[ callList="" memoryops="" filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h" execusionnum="1"];
+	Node0x47cc490 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h",linenumber="142",label="{if.then.succFake|{<s0>T|<s1>F}}"];
+	Node0x47cc490:s0 -> Node0x465aa60[ callList="" memoryops="" filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h" execusionnum="0"];
+	Node0x47cc490:s1 -> Node0x465aa60[ callList="" memoryops="" filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h" execusionnum="0"];
+	Node0x465aa60 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h",linenumber="159",label="{if.end.predFake}"];
+	Node0x465aa60 -> Node0x47cc540;
+	Node0x47cc540 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h",linenumber="159",label="{if.end}"];
+	Node0x465ab00 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h",linenumber="162",label="{return}"];
+	Node0x465ab00 -> Node0x47cc5f0;
+	Node0x47cc5f0 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h",linenumber="162",label="{return.succFake}"];
+subgraph cluster_0 {
+	label="entry";
+	tripcount="0";
+	invocationtime="1";
+
+	Node0x465a920 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h",linenumber="140",label="{while.body.predFake}"];
+	Node0x465a920 -> Node0x47cc3e0[ callList="" memoryops="" filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h" execusionnum="2"];
+	Node0x47cc3e0 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h",linenumber="141",label="{while.body.succFake|{<s0>T|<s1>F}}"];
+	Node0x47cc3e0:s0 -> Node0x47cc490[label="W:1" callList="" memoryops="" filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h" execusionnum="0"];
+	Node0x47cc3e0:s1 -> Node0x465a920[label="W:2" callList="" memoryops="" filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h" execusionnum="1"];
+}
+}

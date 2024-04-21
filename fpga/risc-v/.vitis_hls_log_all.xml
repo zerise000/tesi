@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-21T15:50:54.000+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-21T15:14:38.641+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-21T15:14:14.767+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-19T18:53:28.461+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-19T18:52:33.262+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-19T18:40:12.864+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-19T18:30:23.675+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-19T18:29:59.716+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-19T18:29:32.837+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-19T18:27:56.879+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-19T18:27:27.813+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-19T18:22:51.246+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-19T18:21:06.836+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-19T18:18:22.102+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-19T18:17:53.257+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-19T18:17:34.724+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-19T18:15:03.025+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-19T18:09:25.288+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-19T18:08:36.443+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-19T18:05:22.581+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-19T18:04:48.771+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-19T16:52:04.748+0200"/>
+      </csimLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <csimLog>
+        <logs message="WARNING [HLS SIM]: hls::stream 'hls::stream&lt;unsigned int, 0>3' contains leftover data, which may result in RTL simulation hanging." projectName="risc-v" solutionName="solution" date="2024-04-19T18:10:26.509+0200" type="Warning"/>
+      </csimLog>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

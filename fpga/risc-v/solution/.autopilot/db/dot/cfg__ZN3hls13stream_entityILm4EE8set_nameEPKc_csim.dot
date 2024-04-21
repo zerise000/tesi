@@ -1,0 +1,7 @@
+digraph "CFG for 'hls::stream_entity\<4ul\>::set_name' function" {
+	label="CFG for 'hls::stream_entity\<4ul\>::set_name' function";
+
+	Node0x46e19f0 [shape=record,filename="",linenumber="",label="{entry.predFake}"];
+	Node0x46e19f0 -> Node0x47a18e0[ callList="" memoryops="" filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h" execusionnum="4"];
+	Node0x47a18e0 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h",linenumber="286",label="{entry.succFake}"];
+}

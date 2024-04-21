@@ -1,0 +1,7 @@
+digraph "CFG for 'hls::stream_globals::check_deadlock' function" {
+	label="CFG for 'hls::stream_globals::check_deadlock' function";
+
+	Node0x43eff60 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h",linenumber="127",label="{entry.predFake}"];
+	Node0x43eff60 -> Node0x47d3780[ callList="" memoryops="" filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h" execusionnum="0"];
+	Node0x47d3780 [shape=record,filename="/tools/Xilinx/Vitis_HLS/2023.1/include/hls_stream.h",linenumber="127",label="{entry.succFake}"];
+}
