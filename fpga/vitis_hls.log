@@ -1,11 +1,12 @@
 INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2023.1/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'mattia' on host 'mattia' (Linux_x86_64 version 6.5.0-28-generic) on Sun Apr 21 15:52:15 CEST 2024
+INFO: [HLS 200-10] For user 'mattia' on host 'mattia' (Linux_x86_64 version 6.5.0-28-generic) on Wed Apr 24 18:54:55 CEST 2024
 INFO: [HLS 200-10] On os Ubuntu 22.04.4 LTS
 INFO: [HLS 200-10] In directory '/home/mattia/uni/tesi/fpga'
 Sourcing Tcl script '/home/mattia/uni/tesi/fpga/risc-v/solution/csim.tcl'
 INFO: [HLS 200-1510] Running: source /home/mattia/uni/tesi/fpga/risc-v/solution/csim.tcl
 INFO: [HLS 200-1510] Running: open_project risc-v 
 INFO: [HLS 200-10] Opening project '/home/mattia/uni/tesi/fpga/risc-v'.
+INFO: [HLS 200-1510] Running: set_top run_cpu 
 INFO: [HLS 200-1510] Running: add_files ../src/cpp_files/libcpu.cpp 
 INFO: [HLS 200-10] Adding design file '../src/cpp_files/libcpu.cpp' to the project
 INFO: [HLS 200-1510] Running: add_files ../src/h_files/libcpu.h 
@@ -14,7 +15,7 @@ INFO: [HLS 200-1510] Running: add_files ../src/cpp_files/libmem.cpp
 INFO: [HLS 200-10] Adding design file '../src/cpp_files/libmem.cpp' to the project
 INFO: [HLS 200-1510] Running: add_files ../src/h_files/libmem.h 
 INFO: [HLS 200-10] Adding design file '../src/h_files/libmem.h' to the project
-INFO: [HLS 200-1510] Running: add_files -tb ../src/main.cpp 
+INFO: [HLS 200-1510] Running: add_files -tb ../src/main.cpp -cflags -Wno-unknown-pragmas 
 INFO: [HLS 200-10] Adding test bench file '../src/main.cpp' to the project
 INFO: [HLS 200-1510] Running: open_solution solution -flow_target vivado 
 INFO: [HLS 200-10] Opening solution '/home/mattia/uni/tesi/fpga/risc-v/solution'.
@@ -22,18 +23,18 @@ INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
 INFO: [HLS 200-1505] Using flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-1505.html
-INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
 INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
-INFO: [HLS 200-1510] Running: csim_design -profile -quiet 
+INFO: [HLS 200-1510] Running: csim_design -setup -quiet 
 INFO: [SIM 211-2] *************** CSIM start ***************
-INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
 INFO: [HLS 200-2036] Building debug C Simulation binaries
    Compiling ../../../../../src/main.cpp in debug mode
+   Compiling ../../../../../src/cpp_files/libcpu.cpp in debug mode
+   Compiling ../../../../../src/cpp_files/libmem.cpp in debug mode
    Generating csim.exe
-8
-INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 1
-   Generating dot files
-INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [HLS 200-2035] Skipping execution of C Simulation due to 'setup' option
+INFO: [SIM 211-1] CSim file generation done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-111] Finished Command csim_design CPU user time: 2.13 seconds. CPU system time: 0.38 seconds. Elapsed time: 2.55 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-112] Total CPU user time: 4.07 seconds. Total CPU system time: 0.61 seconds. Total elapsed time: 4.48 seconds; peak allocated memory: 200.594 MB.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 3.26 seconds. CPU system time: 0.39 seconds. Elapsed time: 3.67 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 5.17 seconds. Total CPU system time: 0.64 seconds. Total elapsed time: 5.58 seconds; peak allocated memory: 209.559 MB.

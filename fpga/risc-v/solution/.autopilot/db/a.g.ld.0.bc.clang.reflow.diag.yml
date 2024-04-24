@@ -1,0 +1,70 @@
+--- !Passed
+Pass:            reflow-reg2mem-ssa
+Name:            DisaggrReason
+Function:        _Z10next_instrP4Archm
+Args:            
+  - String:          'Adding '''
+  - Name:            cpu
+  - String:          ''' into disaggregation list because there''s '
+  - String:          'hls::stream object inside the struct'
+...
+--- !Passed
+Pass:            reflow-reg2mem-ssa
+Name:            DisaggrReason
+Function:        _Z10next_instrP4Archm
+Args:            
+  - String:          'Adding '''
+  - Name:            cpu
+  - String:          ''' into disaggregation list because there''s '
+  - String:          'hls::stream object inside the struct'
+...
+--- !Passed
+Pass:            reflow-reg2mem-ssa
+Name:            DisaggrReason
+Function:        _Z10next_instrP4Archm
+Args:            
+  - String:          'Adding '''
+  - Name:            cpu
+  - String:          ''' into disaggregation list because there''s '
+  - String:          'hls::stream object inside the struct'
+...
+--- !Passed
+Pass:            reflow-disaggr
+Name:            DisaggrReason
+Function:        apatb_next_instr_ir
+Args:            
+  - String:          'Adding '''
+  - Name:            cpu
+  - String:          ''' into disaggregation list because there''s '
+  - String:          'hls::stream object inside the struct'
+...
+--- !Passed
+Pass:            reflow-disaggr
+Name:            DisaggrReason
+Function:        apatb_next_instr_ir
+Args:            
+  - String:          'Adding '''
+  - Name:            cpu
+  - String:          ''' into disaggregation list because there''s '
+  - String:          'hls::stream object inside the struct'
+...
+--- !Passed
+Pass:            reflow-disaggr
+Name:            DisaggrReason
+Function:        apatb_next_instr_ir
+Args:            
+  - String:          'Adding '''
+  - Name:            cpu
+  - String:          ''' into disaggregation list because there''s '
+  - String:          'hls::stream object inside the struct'
+...
+--- !Passed
+Pass:            reflow-disaggr
+Name:            DisaggrSucc
+DebugLoc:        { File: ../src/cpp_files/libcpu.cpp, Line: 18, Column: 0 }
+Function:        _Z10next_instrP4Archm
+Args:            
+  - String:          'Disaggregating variable '''
+  - Name:            cpu
+  - String:          ''''
+...

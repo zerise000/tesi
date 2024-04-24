@@ -22,13 +22,14 @@ typedef struct {
 
 	bool ALUOp[2];
 
-	uint8_t branch_op;
 	uint32_t instr;
 	uint64_t immediate;
 
 	hls::stream<uint32_t,CHANNEL_SIZE> instr_in;
 	hls::stream<uint8_t,CHANNEL_SIZE> ALU_signal;
+	hls::stream<uint8_t,CHANNEL_SIZE> branch_op;
 	hls::stream<uint64_t,CHANNEL_SIZE> ALU_result;
+	hls::stream<uint16_t,CHANNEL_SIZE> next_instr;
 
 
 	uint16_t pc;
@@ -43,9 +44,12 @@ void gen_ALU_signal(Arch* cpu);
 uint64_t get_first_operand(Arch* cpu);
 uint64_t get_second_operand(Arch* cpu);
 
+void check_branch_type(Arch* cpu);
+void next_instr(Arch* cpu);
 void handle_result(Arch* cpu,Memory* mem);
 void sum(Arch* cpu);
 void def_immediate(Arch* cpu);
 
+void run_cpu();
 
 #endif

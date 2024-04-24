@@ -1,0 +1,17 @@
+{
+  "0": {
+    "basicblocks": 11,
+    "calls": "",
+    "file": "libcpu.cpp",
+    "fileloc": 18,
+    "instructions": 62,
+    "loads": {
+      "T": 7
+    },
+    "name": "next_instr",
+    "stores": {
+      "T": 1
+    },
+    "total_instructions": 62
+  }
+}

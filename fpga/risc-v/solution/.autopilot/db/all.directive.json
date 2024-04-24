@@ -1,0 +1,23 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "next_instr",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "next_instr"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/home/mattia/uni/tesi/fpga/risc-v/solution/csynth.tcl",
+    "sourceLine": 18,
+    "success": true
+  }
+]

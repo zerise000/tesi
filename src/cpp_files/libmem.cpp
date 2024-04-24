@@ -29,3 +29,21 @@ void fetch(Memory* mem,hls::stream<uint32_t> &out){
 
 	out.write(instruction);
 }
+
+void load_program(Memory* mem){
+	uint32_t index=0;
+	uint32_t instr=0;
+
+	while(!mem->data_in.empty()){
+		if(index+4 > MEM_SIZE)
+			exit(1);
+
+		instr = mem->data_in.read();
+
+		for(int i=0; i<4; i++)
+			mem->instr_buff[index+i] = (instr >> 8*i) & 0xFF;
+
+		index+=4;
+
+	}
+}

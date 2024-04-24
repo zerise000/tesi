@@ -1,0 +1,998 @@
+{
+  "Top": "next_instr",
+  "RtlTop": "next_instr",
+  "RtlPrefix": "",
+  "RtlSubPrefix": "next_instr_",
+  "SourceLanguage": "cpp",
+  "HostMachineBits": "64",
+  "FunctionProtocol": "ap_ctrl_hs",
+  "ResetStyle": "control",
+  "Target": {
+    "Family": "zynq",
+    "Device": "xc7z020",
+    "Package": "-clg484",
+    "Speed": "-1",
+    "Triple": "fpga64-xilinx-none"
+  },
+  "Args": {
+    "cpu": {
+      "index": "0",
+      "direction": "inout",
+      "srcType": "*",
+      "srcSize": "2432",
+      "hwRefs": [
+        {
+          "type": "port",
+          "interface": "cpu_registers_address0",
+          "name": "cpu_registers_address0",
+          "usage": "address",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_registers_ce0",
+          "name": "cpu_registers_ce0",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_registers_we0",
+          "name": "cpu_registers_we0",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_registers_d0",
+          "name": "cpu_registers_d0",
+          "usage": "data",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_registers_q0",
+          "name": "cpu_registers_q0",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_registers_address1",
+          "name": "cpu_registers_address1",
+          "usage": "address",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_registers_ce1",
+          "name": "cpu_registers_ce1",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_registers_we1",
+          "name": "cpu_registers_we1",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_registers_d1",
+          "name": "cpu_registers_d1",
+          "usage": "data",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_registers_q1",
+          "name": "cpu_registers_q1",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_memWrite",
+          "name": "cpu_memWrite",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_regWrite",
+          "name": "cpu_regWrite",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_branch",
+          "name": "cpu_branch",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_memToReg",
+          "name": "cpu_memToReg",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_memRead",
+          "name": "cpu_memRead",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_ALUSrc",
+          "name": "cpu_ALUSrc",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_ALUOp_address0",
+          "name": "cpu_ALUOp_address0",
+          "usage": "address",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_ALUOp_ce0",
+          "name": "cpu_ALUOp_ce0",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_ALUOp_we0",
+          "name": "cpu_ALUOp_we0",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_ALUOp_d0",
+          "name": "cpu_ALUOp_d0",
+          "usage": "data",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_ALUOp_q0",
+          "name": "cpu_ALUOp_q0",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_ALUOp_address1",
+          "name": "cpu_ALUOp_address1",
+          "usage": "address",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_ALUOp_ce1",
+          "name": "cpu_ALUOp_ce1",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_ALUOp_we1",
+          "name": "cpu_ALUOp_we1",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_ALUOp_d1",
+          "name": "cpu_ALUOp_d1",
+          "usage": "data",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_ALUOp_q1",
+          "name": "cpu_ALUOp_q1",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_branch_op",
+          "name": "cpu_branch_op",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_instr",
+          "name": "cpu_instr",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_immediate",
+          "name": "cpu_immediate",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_instr_in",
+          "name": "cpu_instr_in",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_ALU_signal",
+          "name": "cpu_ALU_signal",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_ALU_result",
+          "name": "cpu_ALU_result",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_pc_i",
+          "name": "cpu_pc_i",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_pc_o",
+          "name": "cpu_pc_o",
+          "usage": "data",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "cpu_pc_o_ap_vld",
+          "name": "cpu_pc_o_ap_vld",
+          "usage": "control",
+          "direction": "out"
+        }
+      ]
+    },
+    "sub_res": {
+      "index": "1",
+      "direction": "in",
+      "srcType": "long unsigned int",
+      "srcSize": "64",
+      "hwRefs": [{
+          "type": "port",
+          "interface": "sub_res",
+          "name": "sub_res",
+          "usage": "data",
+          "direction": "in"
+        }]
+    }
+  },
+  "HlsSolution": {
+    "FlowTarget": "vivado",
+    "DirectiveTcl": ["set_directive_top next_instr -name next_instr"],
+    "ProfileOption": "0",
+    "ProfileType": "none",
+    "KernelName": "next_instr"
+  },
+  "ClockInfo": {
+    "ClockName": "ap_clk",
+    "ClockPeriod": "10",
+    "Uncertainty": "2.7",
+    "IsCombinational": "0",
+    "II": "2",
+    "Latency": "1"
+  },
+  "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
+  "Ipx": {
+    "Vendor": "xilinx.com",
+    "Library": "hls",
+    "Name": "next_instr",
+    "Version": "1.0",
+    "DisplayName": "Next_instr",
+    "Revision": "2113525821",
+    "Description": "An IP generated by Vitis HLS",
+    "Taxonomy": "\/VITIS_HLS_IP",
+    "AutoFamilySupport": "",
+    "ZipFile": "xilinx_com_hls_next_instr_1_0.zip"
+  },
+  "Files": {
+    "CSource": [
+      "..\/..\/..\/src\/cpp_files\/libcpu.cpp",
+      "..\/..\/..\/src\/cpp_files\/libmem.cpp"
+    ],
+    "Vhdl": ["impl\/vhdl\/next_instr.vhd"],
+    "Verilog": ["impl\/verilog\/next_instr.v"],
+    "IpMisc": ["impl\/misc\/logo.png"],
+    "CsynthXml": "syn\/report\/csynth.xml",
+    "DebugDir": ".debug",
+    "KernelXml": ".autopilot\/db\/kernel.internal.xml",
+    "Xo": "",
+    "XoHlsDir": "",
+    "ProtoInst": [".debug\/next_instr.protoinst"]
+  },
+  "SubcoreInfo": {
+    "HasXpmMemory": false,
+    "HasClockedDsp": false,
+    "Ip": []
+  },
+  "Interfaces": {
+    "ap_clk": {
+      "type": "clock",
+      "busTypeName": "clock",
+      "mode": "slave",
+      "busParams": {"ASSOCIATED_RESET": "ap_rst"},
+      "portMap": {"ap_clk": "CLK"},
+      "ports": ["ap_clk"]
+    },
+    "ap_rst": {
+      "type": "reset",
+      "busTypeName": "reset",
+      "mode": "slave",
+      "busParams": {"POLARITY": "ACTIVE_HIGH"},
+      "portMap": {"ap_rst": "RST"},
+      "ports": ["ap_rst"]
+    },
+    "ap_ctrl": {
+      "type": "ap_ctrl",
+      "busTypeName": "acc_handshake",
+      "mode": "slave",
+      "portMap": {
+        "ap_start": "start",
+        "ap_done": "done",
+        "ap_idle": "idle",
+        "ap_ready": "ready"
+      },
+      "ports": [
+        "ap_done",
+        "ap_idle",
+        "ap_ready",
+        "ap_start"
+      ]
+    },
+    "cpu_registers_address0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "5",
+      "portMap": {"cpu_registers_address0": "DATA"},
+      "ports": ["cpu_registers_address0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_registers_d0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "64",
+      "portMap": {"cpu_registers_d0": "DATA"},
+      "ports": ["cpu_registers_d0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_registers_q0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "slave",
+      "dataWidth": "64",
+      "portMap": {"cpu_registers_q0": "DATA"},
+      "ports": ["cpu_registers_q0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_registers_address1": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "5",
+      "portMap": {"cpu_registers_address1": "DATA"},
+      "ports": ["cpu_registers_address1"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_registers_d1": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "64",
+      "portMap": {"cpu_registers_d1": "DATA"},
+      "ports": ["cpu_registers_d1"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_registers_q1": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "slave",
+      "dataWidth": "64",
+      "portMap": {"cpu_registers_q1": "DATA"},
+      "ports": ["cpu_registers_q1"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_memWrite": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "1",
+      "portMap": {"cpu_memWrite": "DATA"},
+      "ports": ["cpu_memWrite"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_regWrite": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "1",
+      "portMap": {"cpu_regWrite": "DATA"},
+      "ports": ["cpu_regWrite"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_branch": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "1",
+      "portMap": {"cpu_branch": "DATA"},
+      "ports": ["cpu_branch"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_memToReg": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "1",
+      "portMap": {"cpu_memToReg": "DATA"},
+      "ports": ["cpu_memToReg"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_memRead": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "1",
+      "portMap": {"cpu_memRead": "DATA"},
+      "ports": ["cpu_memRead"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_ALUSrc": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "1",
+      "portMap": {"cpu_ALUSrc": "DATA"},
+      "ports": ["cpu_ALUSrc"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_ALUOp_address0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "1",
+      "portMap": {"cpu_ALUOp_address0": "DATA"},
+      "ports": ["cpu_ALUOp_address0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_ALUOp_d0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "1",
+      "portMap": {"cpu_ALUOp_d0": "DATA"},
+      "ports": ["cpu_ALUOp_d0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_ALUOp_q0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "slave",
+      "dataWidth": "1",
+      "portMap": {"cpu_ALUOp_q0": "DATA"},
+      "ports": ["cpu_ALUOp_q0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_ALUOp_address1": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "1",
+      "portMap": {"cpu_ALUOp_address1": "DATA"},
+      "ports": ["cpu_ALUOp_address1"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_ALUOp_d1": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "1",
+      "portMap": {"cpu_ALUOp_d1": "DATA"},
+      "ports": ["cpu_ALUOp_d1"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_ALUOp_q1": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "slave",
+      "dataWidth": "1",
+      "portMap": {"cpu_ALUOp_q1": "DATA"},
+      "ports": ["cpu_ALUOp_q1"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_branch_op": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "8",
+      "portMap": {"cpu_branch_op": "DATA"},
+      "ports": ["cpu_branch_op"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_instr": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "32",
+      "portMap": {"cpu_instr": "DATA"},
+      "ports": ["cpu_instr"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_immediate": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "64",
+      "portMap": {"cpu_immediate": "DATA"},
+      "ports": ["cpu_immediate"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_instr_in": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "32",
+      "portMap": {"cpu_instr_in": "DATA"},
+      "ports": ["cpu_instr_in"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_ALU_signal": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "8",
+      "portMap": {"cpu_ALU_signal": "DATA"},
+      "ports": ["cpu_ALU_signal"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_ALU_result": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "64",
+      "portMap": {"cpu_ALU_result": "DATA"},
+      "ports": ["cpu_ALU_result"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_pc_i": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_ovld",
+      "mode": "slave",
+      "dataWidth": "16",
+      "portMap": {"cpu_pc_i": "DATA"},
+      "ports": ["cpu_pc_i"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "cpu_pc_o": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_ovld",
+      "mode": "master",
+      "dataWidth": "16",
+      "portMap": {"cpu_pc_o": "DATA"},
+      "ports": ["cpu_pc_o"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "cpu"
+        }]
+    },
+    "sub_res": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "64",
+      "portMap": {"sub_res": "DATA"},
+      "ports": ["sub_res"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "sub_res"
+        }]
+    }
+  },
+  "RtlPorts": {
+    "ap_clk": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_rst": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_start": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_done": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ap_idle": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ap_ready": {
+      "dir": "out",
+      "width": "1"
+    },
+    "cpu_registers_address0": {
+      "dir": "out",
+      "width": "5"
+    },
+    "cpu_registers_ce0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "cpu_registers_we0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "cpu_registers_d0": {
+      "dir": "out",
+      "width": "64"
+    },
+    "cpu_registers_q0": {
+      "dir": "in",
+      "width": "64"
+    },
+    "cpu_registers_address1": {
+      "dir": "out",
+      "width": "5"
+    },
+    "cpu_registers_ce1": {
+      "dir": "out",
+      "width": "1"
+    },
+    "cpu_registers_we1": {
+      "dir": "out",
+      "width": "1"
+    },
+    "cpu_registers_d1": {
+      "dir": "out",
+      "width": "64"
+    },
+    "cpu_registers_q1": {
+      "dir": "in",
+      "width": "64"
+    },
+    "cpu_memWrite": {
+      "dir": "in",
+      "width": "1"
+    },
+    "cpu_regWrite": {
+      "dir": "in",
+      "width": "1"
+    },
+    "cpu_branch": {
+      "dir": "in",
+      "width": "1"
+    },
+    "cpu_memToReg": {
+      "dir": "in",
+      "width": "1"
+    },
+    "cpu_memRead": {
+      "dir": "in",
+      "width": "1"
+    },
+    "cpu_ALUSrc": {
+      "dir": "in",
+      "width": "1"
+    },
+    "cpu_ALUOp_address0": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "cpu_ALUOp_ce0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "cpu_ALUOp_we0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "cpu_ALUOp_d0": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "cpu_ALUOp_q0": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "cpu_ALUOp_address1": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "cpu_ALUOp_ce1": {
+      "dir": "out",
+      "width": "1"
+    },
+    "cpu_ALUOp_we1": {
+      "dir": "out",
+      "width": "1"
+    },
+    "cpu_ALUOp_d1": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "cpu_ALUOp_q1": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "cpu_branch_op": {
+      "dir": "in",
+      "width": "8"
+    },
+    "cpu_instr": {
+      "dir": "in",
+      "width": "32"
+    },
+    "cpu_immediate": {
+      "dir": "in",
+      "width": "64"
+    },
+    "cpu_instr_in": {
+      "dir": "in",
+      "width": "32"
+    },
+    "cpu_ALU_signal": {
+      "dir": "in",
+      "width": "8"
+    },
+    "cpu_ALU_result": {
+      "dir": "in",
+      "width": "64"
+    },
+    "cpu_pc_i": {
+      "dir": "in",
+      "width": "16"
+    },
+    "cpu_pc_o": {
+      "dir": "out",
+      "width": "16"
+    },
+    "cpu_pc_o_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "sub_res": {
+      "dir": "in",
+      "width": "64"
+    }
+  },
+  "ModuleInfo": {
+    "Hierarchy": {"ModuleName": "next_instr"},
+    "Info": {"next_instr": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      }},
+    "Metrics": {"next_instr": {
+        "Latency": {
+          "LatencyBest": "1",
+          "LatencyAvg": "1",
+          "LatencyWorst": "1",
+          "PipelineII": "2",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "6.454"
+        },
+        "Area": {
+          "FF": "36",
+          "AVAIL_FF": "106400",
+          "UTIL_FF": "~0",
+          "LUT": "343",
+          "AVAIL_LUT": "53200",
+          "UTIL_LUT": "~0",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "280",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      }}
+  },
+  "GenerateBdFiles": "0",
+  "GenData": {
+    "DataVersion": "0.2",
+    "Time": "2024-04-22 17:21:41 CEST",
+    "ToolName": "vitis_hls",
+    "ToolVersion": "2023.1"
+  }
+}

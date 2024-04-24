@@ -1,0 +1,22 @@
+---
+MainSourceFile:  /home/mattia/uni/tesi/fpga/risc-v/solution/.autopilot/db/libmem.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_5_1:  '
+    FileOffset:      5
+    FilePath:        /home/mattia/uni/tesi/src/cpp_files/libmem.cpp
+    Replacements:    
+      - FilePath:        /home/mattia/uni/tesi/fpga/risc-v/solution/.autopilot/db/libmem.pp.0.cpp
+        Offset:          671606
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_5_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_25_1:  '
+    FileOffset:      25
+    FilePath:        /home/mattia/uni/tesi/src/cpp_files/libmem.cpp
+    Replacements:    
+      - FilePath:        /home/mattia/uni/tesi/fpga/risc-v/solution/.autopilot/db/libmem.pp.0.cpp
+        Offset:          672008
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_25_1: '
+...

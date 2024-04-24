@@ -1,0 +1,159 @@
+
+
+================================================================
+== Synthesis Summary Report of 'next_instr'
+================================================================
++ General Information: 
+    * Date:           Mon Apr 22 17:21:40 2024
+    * Version:        2023.1 (Build 3854077 on May  4 2023)
+    * Project:        risc-v
+    * Solution:       solution (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg484-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------+------+------+---------+--------+----------+---------+------+----------+------+----+----------+-----------+-----+
+    |    Modules   | Issue|      | Latency | Latency| Iteration|         | Trip |          |      |    |          |           |     |
+    |    & Loops   | Type | Slack| (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined| BRAM | DSP|    FF    |    LUT    | URAM|
+    +--------------+------+------+---------+--------+----------+---------+------+----------+------+----+----------+-----------+-----+
+    |+ next_instr  |     -|  0.85|        1|  10.000|         -|        2|     -|        no|     -|   -|  36 (~0%)|  343 (~0%)|    -|
+    +--------------+------+------+---------+--------+----------+---------+------+----------+------+----+----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++------------------------+-----------+----------+
+| Port                   | Direction | Bitwidth |
++------------------------+-----------+----------+
+| cpu_ALUOp_address0     | out       | 1        |
+| cpu_ALUOp_address1     | out       | 1        |
+| cpu_ALUOp_d0           | out       | 1        |
+| cpu_ALUOp_d1           | out       | 1        |
+| cpu_ALUOp_q0           | in        | 1        |
+| cpu_ALUOp_q1           | in        | 1        |
+| cpu_registers_address0 | out       | 5        |
+| cpu_registers_address1 | out       | 5        |
+| cpu_registers_d0       | out       | 64       |
+| cpu_registers_d1       | out       | 64       |
+| cpu_registers_q0       | in        | 64       |
+| cpu_registers_q1       | in        | 64       |
++------------------------+-----------+----------+
+
+* Other Ports
++----------------+---------+-----------+----------+
+| Port           | Mode    | Direction | Bitwidth |
++----------------+---------+-----------+----------+
+| cpu_ALUSrc     | ap_none | in        | 1        |
+| cpu_ALU_result | ap_none | in        | 64       |
+| cpu_ALU_signal | ap_none | in        | 8        |
+| cpu_branch     | ap_none | in        | 1        |
+| cpu_branch_op  | ap_none | in        | 8        |
+| cpu_immediate  | ap_none | in        | 64       |
+| cpu_instr      | ap_none | in        | 32       |
+| cpu_instr_in   | ap_none | in        | 32       |
+| cpu_memRead    | ap_none | in        | 1        |
+| cpu_memToReg   | ap_none | in        | 1        |
+| cpu_memWrite   | ap_none | in        | 1        |
+| cpu_pc_i       | ap_ovld | in        | 16       |
+| cpu_pc_o       | ap_ovld | out       | 16       |
+| cpu_regWrite   | ap_none | in        | 1        |
+| sub_res        | ap_none | in        | 64       |
++----------------+---------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+-------------------+
+| Argument | Direction | Datatype          |
++----------+-----------+-------------------+
+| cpu      | inout     | pointer           |
+| sub_res  | in        | long unsigned int |
++----------+-----------+-------------------+
+
+* SW-to-HW Mapping
++----------+------------------------+---------+----------+
+| Argument | HW Interface           | HW Type | HW Usage |
++----------+------------------------+---------+----------+
+| cpu      | cpu_registers_address0 | port    | offset   |
+| cpu      | cpu_registers_ce0      | port    |          |
+| cpu      | cpu_registers_we0      | port    |          |
+| cpu      | cpu_registers_d0       | port    |          |
+| cpu      | cpu_registers_q0       | port    |          |
+| cpu      | cpu_registers_address1 | port    | offset   |
+| cpu      | cpu_registers_ce1      | port    |          |
+| cpu      | cpu_registers_we1      | port    |          |
+| cpu      | cpu_registers_d1       | port    |          |
+| cpu      | cpu_registers_q1       | port    |          |
+| cpu      | cpu_memWrite           | port    |          |
+| cpu      | cpu_regWrite           | port    |          |
+| cpu      | cpu_branch             | port    |          |
+| cpu      | cpu_memToReg           | port    |          |
+| cpu      | cpu_memRead            | port    |          |
+| cpu      | cpu_ALUSrc             | port    |          |
+| cpu      | cpu_ALUOp_address0     | port    | offset   |
+| cpu      | cpu_ALUOp_ce0          | port    |          |
+| cpu      | cpu_ALUOp_we0          | port    |          |
+| cpu      | cpu_ALUOp_d0           | port    |          |
+| cpu      | cpu_ALUOp_q0           | port    |          |
+| cpu      | cpu_ALUOp_address1     | port    | offset   |
+| cpu      | cpu_ALUOp_ce1          | port    |          |
+| cpu      | cpu_ALUOp_we1          | port    |          |
+| cpu      | cpu_ALUOp_d1           | port    |          |
+| cpu      | cpu_ALUOp_q1           | port    |          |
+| cpu      | cpu_branch_op          | port    |          |
+| cpu      | cpu_instr              | port    |          |
+| cpu      | cpu_immediate          | port    |          |
+| cpu      | cpu_instr_in           | port    |          |
+| cpu      | cpu_ALU_signal         | port    |          |
+| cpu      | cpu_ALU_result         | port    |          |
+| cpu      | cpu_pc_i               | port    |          |
+| cpu      | cpu_pc_o               | port    |          |
+| cpu      | cpu_pc_o_ap_vld        | port    |          |
+| sub_res  | sub_res                | port    |          |
++----------+------------------------+---------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++--------------+-----+--------+----------+-----+--------+---------+
+| Name         | DSP | Pragma | Variable | Op  | Impl   | Latency |
++--------------+-----+--------+----------+-----+--------+---------+
+| + next_instr | 0   |        |          |     |        |         |
+|   cpu_pc_o   | -   |        | add_ln43 | add | fabric | 0       |
++--------------+-----+--------+----------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+---------------------------------+----------------------------------------------------------+
+| Type      | Options                         | Location                                                 |
++-----------+---------------------------------+----------------------------------------------------------+
+| stable    | variable=mem->instr_buff        | ../src/cpp_files/libmem.cpp:17 in fetch, mem->instr_buff |
+| interface | mode=m_axi port=mem->instr_buff | ../src/cpp_files/libmem.cpp:18 in fetch, mem->instr_buff |
++-----------+---------------------------------+----------------------------------------------------------+
+
+

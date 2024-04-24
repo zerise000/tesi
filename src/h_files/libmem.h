@@ -15,11 +15,13 @@ typedef struct{
   uint8_t instr_buff[MEM_SIZE];
   uint8_t data_buff[MEM_SIZE];
   hls::stream<uint32_t, CHANNEL_SIZE> addr_in;
+  hls::stream<uint32_t,CHANNEL_SIZE> data_in;
 } Memory;
 
 
 void init_mem(Memory* mem);
 uint8_t read_instr(Memory mem,uint16_t loc);
 void fetch(Memory* mem,hls::stream<uint32_t> &out);
+void load_program(Memory* mem);
 
 #endif

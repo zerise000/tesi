@@ -1,0 +1,40 @@
+digraph "CFG for 'next_instr' function" {
+	label="CFG for 'next_instr' function";
+
+	Node0x5885fe0 [shape=record,filename="",linenumber="",label="{entry.predFake}"];
+	Node0x5885fe0 -> Node0x58de9f0[ callList="" memoryops="" filename="../../../../../src/cpp_files/libcpu.cpp" execusionnum="0"];
+	Node0x58de9f0 [shape=record,filename="../../../../../src/cpp_files/libcpu.cpp",linenumber="22",label="{entry.succFake|{<s0>T|<s1>F}}"];
+	Node0x58de9f0:s0 -> Node0x58de910[ callList="" memoryops="" filename="../../../../../src/cpp_files/libcpu.cpp" execusionnum="0"];
+	Node0x58de9f0:s1 -> Node0x5886fd0;
+	Node0x58de910 [shape=record,filename="../../../../../src/cpp_files/libcpu.cpp",linenumber="23",label="{if.then.succFake|{<s0>def|<s1>0|<s2>1|<s3>4|<s4>5}}"];
+	Node0x58de910:s0 -> Node0x5886f80;
+	Node0x58de910:s1 -> Node0x58e1950[ callList="" memoryops="" filename="../../../../../src/cpp_files/libcpu.cpp" execusionnum="0"];
+	Node0x58de910:s2 -> Node0x58e1120[ callList="" memoryops="" filename="../../../../../src/cpp_files/libcpu.cpp" execusionnum="0"];
+	Node0x58de910:s3 -> Node0x58e1560[ callList="" memoryops="" filename="../../../../../src/cpp_files/libcpu.cpp" execusionnum="0"];
+	Node0x58de910:s4 -> Node0x58e1330[ callList="" memoryops="" filename="../../../../../src/cpp_files/libcpu.cpp" execusionnum="0"];
+	Node0x58e1950 [shape=record,filename="../../../../../src/cpp_files/libcpu.cpp",linenumber="25",label="{sw.bb.succFake|{<s0>T|<s1>F}}"];
+	Node0x58e1950:s0 -> Node0x5886c60[ callList="" memoryops="" filename="../../../../../src/cpp_files/libcpu.cpp" execusionnum="0"];
+	Node0x58e1950:s1 -> Node0x5886c60;
+	Node0x5886c60 [shape=record,filename="../../../../../src/cpp_files/libcpu.cpp",linenumber="27",label="{if.end.predFake}"];
+	Node0x5886c60 -> Node0x5886f80[ callList="" memoryops="" filename="../../../../../src/cpp_files/libcpu.cpp" execusionnum="0"];
+	Node0x58e1120 [shape=record,filename="../../../../../src/cpp_files/libcpu.cpp",linenumber="29",label="{sw.bb3.succFake|{<s0>T|<s1>F}}"];
+	Node0x58e1120:s0 -> Node0x5886d50[ callList="" memoryops="" filename="../../../../../src/cpp_files/libcpu.cpp" execusionnum="0"];
+	Node0x58e1120:s1 -> Node0x5886d50;
+	Node0x5886d50 [shape=record,filename="../../../../../src/cpp_files/libcpu.cpp",linenumber="31",label="{if.end7.predFake}"];
+	Node0x5886d50 -> Node0x5886f80[ callList="" memoryops="" filename="../../../../../src/cpp_files/libcpu.cpp" execusionnum="0"];
+	Node0x58e1560 [shape=record,filename="../../../../../src/cpp_files/libcpu.cpp",linenumber="33",label="{sw.bb8.succFake|{<s0>T|<s1>F}}"];
+	Node0x58e1560:s0 -> Node0x5886e40[ callList="" memoryops="" filename="../../../../../src/cpp_files/libcpu.cpp" execusionnum="0"];
+	Node0x58e1560:s1 -> Node0x5886e40;
+	Node0x5886e40 [shape=record,filename="../../../../../src/cpp_files/libcpu.cpp",linenumber="35",label="{if.end12.predFake}"];
+	Node0x5886e40 -> Node0x5886f80[ callList="" memoryops="" filename="../../../../../src/cpp_files/libcpu.cpp" execusionnum="0"];
+	Node0x58e1330 [shape=record,filename="../../../../../src/cpp_files/libcpu.cpp",linenumber="37",label="{sw.bb13.succFake|{<s0>T|<s1>F}}"];
+	Node0x58e1330:s0 -> Node0x5886f30[ callList="" memoryops="" filename="../../../../../src/cpp_files/libcpu.cpp" execusionnum="0"];
+	Node0x58e1330:s1 -> Node0x5886f30;
+	Node0x5886f30 [shape=record,filename="../../../../../src/cpp_files/libcpu.cpp",linenumber="39",label="{if.end17.predFake}"];
+	Node0x5886f30 -> Node0x5886f80[ callList="" memoryops="" filename="../../../../../src/cpp_files/libcpu.cpp" execusionnum="0"];
+	Node0x5886f80 [shape=record,filename="../../../../../src/cpp_files/libcpu.cpp",linenumber="41",label="{sw.epilog.predFake}"];
+	Node0x5886f80 -> Node0x5886fd0[ callList="" memoryops="" filename="../../../../../src/cpp_files/libcpu.cpp" execusionnum="0"];
+	Node0x5886fd0 [shape=record,filename="../../../../../src/cpp_files/libcpu.cpp",linenumber="43",label="{if.end18.predFake}"];
+	Node0x5886fd0 -> Node0x5886830[ callList="" memoryops="" filename="../../../../../src/cpp_files/libcpu.cpp" execusionnum="0"];
+	Node0x5886830 [shape=record,filename="../../../../../src/cpp_files/libcpu.cpp",linenumber="44",label="{if.end18.succFake}"];
+}

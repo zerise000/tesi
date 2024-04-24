@@ -1,8 +1,8 @@
-<project xmlns="com.autoesl.autopilot.project" top="" name="risc-v" projectType="C/C++">
+<project xmlns="com.autoesl.autopilot.project" name="risc-v" top="run_cpu" projectType="C/C++">
     <includePaths/>
     <libraryPaths/>
     <Simulation>
-        <SimFlow name="csim" profile="true" csimMode="0" lastCsimMode="0"/>
+        <SimFlow name="csim" csimMode="2" lastCsimMode="0"/>
     </Simulation>
     <files xmlns="">
         <file name="../src/cpp_files/libcpu.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>

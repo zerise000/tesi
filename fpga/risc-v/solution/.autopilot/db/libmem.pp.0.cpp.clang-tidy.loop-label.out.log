@@ -1,0 +1,10 @@
+/home/mattia/uni/tesi/fpga/risc-v/solution/.autopilot/db/libmem.pp.0.cpp:24133:2: warning: Added loop label VITIS_LOOP_5_1:   [xilinx-label-all-loops]
+ for(int i=0; i<4096; i++){
+ ^~~
+ VITIS_LOOP_5_1: 
+/home/mattia/uni/tesi/fpga/risc-v/solution/.autopilot/db/libmem.pp.0.cpp:24133:2: note: FIX-IT applied suggested code changes
+/home/mattia/uni/tesi/fpga/risc-v/solution/.autopilot/db/libmem.pp.0.cpp:24153:3: warning: Added loop label VITIS_LOOP_25_1:   [xilinx-label-all-loops]
+  for(int i=0; i<4; i++){
+  ^~~
+  VITIS_LOOP_25_1: 
+/home/mattia/uni/tesi/fpga/risc-v/solution/.autopilot/db/libmem.pp.0.cpp:24153:3: note: FIX-IT applied suggested code changes

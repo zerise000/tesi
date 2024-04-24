@@ -1,4 +1,5 @@
 digraph "Call graph demangled" {
 	label="Call graph demangled";
 
+	Node0x56dba10 [shape=record,label="{next_instr(Arch*, unsigned long)}" fid="1" demanglename="next_instr" manglename="_ZL10next_instrP4Archm" filename="../../../../../src/cpp_files/libcpu.cpp" linenumber="18"];
 }

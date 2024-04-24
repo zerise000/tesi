@@ -1,0 +1,13 @@
+---
+MainSourceFile:  /home/mattia/uni/tesi/fpga/risc-v/solution/.autopilot/db/libcpu.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_276_1:  '
+    FileOffset:      276
+    FilePath:        /home/mattia/uni/tesi/src/cpp_files/libcpu.cpp
+    Replacements:    
+      - FilePath:        /home/mattia/uni/tesi/fpga/risc-v/solution/.autopilot/db/libcpu.pp.0.cpp
+        Offset:          677871
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_276_1: '
+...
