@@ -20,7 +20,6 @@ typedef struct {
 	bool memRead;
 	bool ALUSrc;
 
-	bool ALUOp[2];
 
 	uint32_t instr;
 	uint64_t immediate;
@@ -50,6 +49,6 @@ void handle_result(Arch* cpu,Memory* mem);
 void sum(Arch* cpu);
 void def_immediate(Arch* cpu);
 
-void run_cpu();
+void run_cpu(hls::stream<uint32_t>& program_in);
 
 #endif

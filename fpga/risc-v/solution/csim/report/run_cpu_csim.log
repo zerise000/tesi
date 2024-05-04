@@ -1,8 +1,5 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
-   Compiling ../../../../../src/main.cpp in debug mode
-   Compiling ../../../../../src/cpp_files/libcpu.cpp in debug mode
-   Compiling ../../../../../src/cpp_files/libmem.cpp in debug mode
-   Generating csim.exe
+make: 'csim.exe' is up to date.
 INFO: [SIM 1] CSim file generation done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

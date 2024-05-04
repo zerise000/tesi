@@ -3,47 +3,58 @@
 #include <cstddef>
 #include <stdint.h>
 
-void run_cpu(){
+typedef long long int int64;
+
+void run_cpu(hls::stream<uint32_t>&program_in){
 	Arch cpu;
 	Memory mem;
 
-#pragma HLS PIPELINE  off
-	init_registers(&cpu);
-	init_mem(&mem);
-
-	mem.data_in.write(0x00418193);
-	mem.data_in.write(0x00520213);
-	mem.data_in.write(0x0041F2B3);
-	mem.data_in.write(0x00328263);
-	mem.data_in.write(0x00730313);
-
-	load_program(&mem);
-
-
+	/*uint8_t funct3;
+	uint8_t funct7;
+	uint8_t opcode;*/
 
 	while(1){
-		mem.addr_in.write(cpu.pc);
-		fetch(&mem,cpu.instr_in);
+		init_registers(&cpu);
+		init_mem(&mem);
 
-		cpu.instr = cpu.instr_in.read();
+		while(program_in.empty()){}
 
-		if(cpu.instr == 0x00){
-			break;
+		while(!program_in.empty()){
+			mem.instr_in.write(program_in.read());
 		}
 
-		def_immediate(&cpu);
 
-		gen_control_signals(&cpu);
-		check_branch_type(&cpu);
-		gen_ALU_signal(&cpu);
+		load_program(&mem);
 
-		sum(&cpu);
-		handle_result(&cpu,&mem);
-		next_instr(&cpu);
 
-		cpu.pc = cpu.next_instr.read();
+		while(1){
+#pragma HLS PIPELINE
+			mem.addr_in.write(cpu.pc);
+			fetch(&mem,cpu.instr_in);
+
+			cpu.instr = cpu.instr_in.read();
+
+			/*funct3 = (cpu.instr >> 12)&0x3;
+			funct7 = (cpu.instr >> 25) & 0x7F;
+			opcode = cpu.instr & 0x7F;*/
+
+			if(cpu.instr == 0x00){
+				break;
+			}
+
+			def_immediate(&cpu);
+
+			gen_control_signals(&cpu);
+			check_branch_type(&cpu);
+			gen_ALU_signal(&cpu);
+
+			sum(&cpu);
+			handle_result(&cpu,&mem);
+			next_instr(&cpu);
+
+			cpu.pc = cpu.next_instr.read();
+		}
 	}
-
 }
 
 void check_branch_type(Arch* cpu){
@@ -60,9 +71,10 @@ void check_branch_type(Arch* cpu){
 }
 
 void next_instr(Arch* cpu){
-	uint64_t incr = 4;
+	int64 incr = 4;
 	uint64_t sub_res = cpu->ALU_result.read();
 	int int_sub = (int)sub_res;
+	int64 pc = (int64)cpu->pc;
 
 	if(cpu->branch){
 		switch(cpu->branch_op.read()){
@@ -85,7 +97,8 @@ void next_instr(Arch* cpu){
 		}
 	}
 
-	cpu->next_instr.write(cpu->pc+incr);
+	incr = (int64)incr;
+	cpu->next_instr.write(pc+incr);
 }
 
 void gen_control_signals(Arch* cpu){
@@ -98,44 +111,40 @@ void gen_control_signals(Arch* cpu){
 			cpu->regWrite = 1;
 			cpu->memRead = 0;
 			cpu->memWrite= 0;
-			cpu->ALUOp[0] = 1;
-			cpu->ALUOp[1] = 0;
+
 			break;
 		case 0x63: //B type cpu->instr
 			cpu->ALUSrc = 0;
 			cpu->regWrite = 0;
 			cpu->memRead = 0;
 			cpu->memWrite= 0;
-			cpu->ALUOp[0] = 0;
-			cpu->ALUOp[1] = 1;
 			
+
 			break;
 		case 0x23: //S type cpu->instr
 			cpu->ALUSrc = 1;
 			cpu->regWrite = 0;
 			cpu->memRead = 0;
 			cpu->memWrite= 1;
-			cpu->ALUOp[0] = 0;
-			cpu->ALUOp[1] = 0;
+
 			break;
-		case 0x03: // I cpu->instruction
+		case 0x13: // I cpu->instruction
 			cpu->ALUSrc = 1;
 			cpu->memToReg = 0;
 			cpu->regWrite = 1;
 			cpu->memRead = 0;
 			cpu->memWrite= 0;
-			cpu->ALUOp[0] = 0;
-			cpu->ALUOp[1] = 0;
 			
+
 			break;
-		case 0x13: // ld cpu->instruction
+		case 0x03: // ld cpu->instruction
 			cpu->ALUSrc = 1;
-			cpu->memToReg = 0;
+			cpu->memToReg = 1;
 			cpu->regWrite = 1;
 			cpu->memRead = 1;
 			cpu->memWrite= 0;
-			cpu->ALUOp[0] = 0;
-			cpu->ALUOp[1] = 0;
+			cpu->branch = 0;
+
 
 			break;
 		default:
@@ -147,6 +156,7 @@ void gen_control_signals(Arch* cpu){
 
 void gen_ALU_signal(Arch* cpu){
 
+	uint8_t opcode = (cpu->instr & 0x7F);
 	uint8_t funz3 = (cpu->instr >> 12) & 0x7;
 	uint8_t funz7 = (cpu->instr >> 25) & 0x7F;
 
@@ -154,25 +164,19 @@ void gen_ALU_signal(Arch* cpu){
 
 	uint8_t signal = 0;
 	
-	if(cpu->ALUOp[0] == 0 && cpu->ALUOp[1] == 0){
+	if(opcode == 0x23 || opcode == 0x3){ // load or store instruction
+		signal = 0x0;
+	}else if(opcode == 0x63){ //branch instruction
 		signal = 0x2;
-	}else if(cpu->ALUOp[1] == 1){
-		signal = 0x6;
-	}else if(cpu->ALUOp[0] == 1){
+	}else if(opcode == 0x33 || opcode == 0x13){ //R or I type instruction
+		signal = funz3;
 
 		switch(code){
-			case 0:
+			case 0x100:
 				signal = 0x2;
 				break;
-			case 0x100:
-				signal = 0x6;
-				break;
-			case 0x6:
-				signal = 0x1;
-				break;
-			case 0x7:
-				signal = 0x0;
-				break;
+			case 0x105:
+				signal = 0x3;
 		}
 
 	}
@@ -201,6 +205,7 @@ uint64_t get_second_operand(Arch* cpu){
 
 void def_immediate(Arch* cpu){
 	uint8_t opcode = cpu->instr & 0x7F;
+	uint8_t func3 = (cpu->instr >> 12) & 0x7;
 
 	uint32_t first_range=0;
 	uint32_t first_bit=0;
@@ -217,24 +222,21 @@ void def_immediate(Arch* cpu){
 		case 0x3:
 		case 0x13:
 			cpu->immediate = (cpu->instr >> 20) & 0xEFF;
+
+			// shift operations, need to extract the field shamt (see RISC-V ISA for more details)
+			if(func3 == 0x1 || func3 == 0x5){
+				cpu->immediate &= 0x1F;
+			}
 		  	break;
 		case 0x63:
-			first_part = (cpu->instr >> 7);
-			second_part  = (cpu->instr >> 25);
 
+			cpu->immediate = ((cpu->instr & 0x80000000) >> 19) | ((cpu->instr & 0x80) >> 4) | ((cpu->instr >> 20) & 0x7E0) | ((cpu->instr >> 7) & 0x1E);
 
-		  	first_bit = (first_part & 0x1) << 11;
-		  	last_bit = (second_part & 0x20) << 12;
-
-		  	first_range = (first_part >> 1) & 0xF;
-		  	second_range = (second_part & 0x3F) << 5;
-
-		  	cpu->immediate = (first_range + second_range + first_bit + last_bit)<<1;
 		  	break;
 
 		case 0x23:
 
-		  	cpu->immediate = ((cpu->instr >> 7) & 0x1F) + ((cpu->instr >> 25) & 0x3F);
+		  	cpu->immediate = ((cpu->instr >> 7) & 0x1F) | ((cpu->instr >> 25) & 0x3F);
 		  	break;
 
 		case 0x6F:
@@ -255,6 +257,9 @@ void def_immediate(Arch* cpu){
 		  	break;
 	}
 
+	if((cpu->immediate >> 12 & 0x1)){
+		cpu->immediate |= 0xFFFFF800;
+	}
 
 }
 
@@ -289,17 +294,31 @@ void sum(Arch* cpu){
 
 
 	switch(ALU_code){
-		case 0x2:
+		case 0x0:
 			result = op1 + op2;
 			break;
-		case 0x6:
+		case 0x2:
 			result = op1 - op2;
 			break;
-		case 0x1:
+		case 0x4:
+			result = op1 ^ op2;
+			break;
+		case 0x6:
 			result = op1 | op2;
 			break;
-		case 0x0:
+		case 0x7:
 			result = op1 & op2;
+			break;
+		case 0x3:
+			//bool mask = ((op1 >> 63) & 1);
+
+			result = (op1 >> op2);
+			break;
+		case 0x5:
+			result = op1 >> op2;
+			break;
+		case 0x1:
+			result = op1 << op2;
 			break;
 	}
 
@@ -311,9 +330,6 @@ void init_registers(Arch* cpu){
 	cpu->pc = 0;
 
 	cpu->memWrite=0;
-
-	cpu->ALUOp[0]=0;
-	cpu->ALUOp[1]=0;
 
 	cpu->immediate = 0;
 

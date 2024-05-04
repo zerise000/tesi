@@ -1,5 +1,5 @@
 INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2023.1/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'mattia' on host 'mattia' (Linux_x86_64 version 6.5.0-28-generic) on Wed Apr 24 18:54:55 CEST 2024
+INFO: [HLS 200-10] For user 'mattia' on host 'mattia' (Linux_x86_64 version 6.5.0-28-generic) on Thu May 02 11:44:33 CEST 2024
 INFO: [HLS 200-10] On os Ubuntu 22.04.4 LTS
 INFO: [HLS 200-10] In directory '/home/mattia/uni/tesi/fpga'
 Sourcing Tcl script '/home/mattia/uni/tesi/fpga/risc-v/solution/csim.tcl'
@@ -29,12 +29,9 @@ INFO: [HLS 200-1510] Running: csim_design -setup -quiet
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
 INFO: [HLS 200-2036] Building debug C Simulation binaries
-   Compiling ../../../../../src/main.cpp in debug mode
-   Compiling ../../../../../src/cpp_files/libcpu.cpp in debug mode
-   Compiling ../../../../../src/cpp_files/libmem.cpp in debug mode
-   Generating csim.exe
+make: 'csim.exe' is up to date.
 INFO: [HLS 200-2035] Skipping execution of C Simulation due to 'setup' option
 INFO: [SIM 211-1] CSim file generation done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-111] Finished Command csim_design CPU user time: 3.26 seconds. CPU system time: 0.39 seconds. Elapsed time: 3.67 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-112] Total CPU user time: 5.17 seconds. Total CPU system time: 0.64 seconds. Total elapsed time: 5.58 seconds; peak allocated memory: 209.559 MB.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.14 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.21 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 2.26 seconds. Total CPU system time: 0.3 seconds. Total elapsed time: 2.43 seconds; peak allocated memory: 200.652 MB.

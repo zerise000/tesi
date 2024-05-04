@@ -4,6 +4,13 @@
     <logs>
       <synLog/>
       <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-05-01T11:22:09.631+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-05-01T11:21:31.155+0200"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-30T18:27:01.771+0200"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-30T18:25:15.554+0200"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-30T16:35:48.231+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-30T16:35:17.671+0200"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-30T16:34:57.684+0200"/>
         <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-24T18:54:11.677+0200"/>
         <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-24T18:53:50.340+0200"/>
         <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="risc-v" solutionName="solution" date="2024-04-24T18:12:18.126+0200"/>

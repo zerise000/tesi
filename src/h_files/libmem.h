@@ -16,6 +16,8 @@ typedef struct{
   uint8_t data_buff[MEM_SIZE];
   hls::stream<uint32_t, CHANNEL_SIZE> addr_in;
   hls::stream<uint32_t,CHANNEL_SIZE> data_in;
+  hls::stream<uint32_t,CHANNEL_SIZE*10> instr_in;
+
 } Memory;
 
 
