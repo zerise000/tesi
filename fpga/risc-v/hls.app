@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="com.autoesl.autopilot.project" name="risc-v" top="run_cpu">
   <files>
+    <file name="../src/h_files/lib_bus.h" sc="0" tb="false" cflags="" blackbox="false" csimflags=""/>
     <file name="../src/cpp_files/libcpu.cpp" sc="0" tb="false" cflags="" blackbox="false" csimflags=""/>
     <file name="../src/h_files/libcpu.h" sc="0" tb="false" cflags="" blackbox="false" csimflags=""/>
     <file name="../src/cpp_files/libmem.cpp" sc="0" tb="false" cflags="" blackbox="false" csimflags=""/>

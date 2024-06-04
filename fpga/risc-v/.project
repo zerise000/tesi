@@ -42,6 +42,11 @@
 			<location>/home/mattia/uni/tesi/fpga/risc-v/solution/.tcls</location>
 		</link>
 		<link>
+			<name>source/lib_bus.h</name>
+			<type>1</type>
+			<location>/home/mattia/uni/tesi/src/h_files/lib_bus.h</location>
+		</link>
+		<link>
 			<name>source/libcpu.cpp</name>
 			<type>1</type>
 			<location>/home/mattia/uni/tesi/src/cpp_files/libcpu.cpp</location>

@@ -2,28 +2,18 @@
 #define __LIBMATH_H__
 
 #include <stdint.h>
-#include "hls_stream.h"
+#include "lib_bus.h"
 #include "hls_task.h"
 
-
-#define MEM_SIZE 4096
-#define CHANNEL_SIZE 10
 #define HLS_TASK_ALLOW_NON_STREAM_ARGS
+#define MEM_MAP_DATA 0x80000000
+
+void rst_mem();
+void write_data(hls::stream<uint16_t> &addr_write_in,hls::stream<uint64_t> &data_in,hls::stream<uint8_t> &data_write_dim);
+void read_data(hls::stream<uint16_t> &in,hls::stream<uint8_t> &stream_read_dim,hls::stream<uint64_t> &out);
 
 
-typedef struct{
-  uint8_t instr_buff[MEM_SIZE];
-  uint8_t data_buff[MEM_SIZE];
-  hls::stream<uint32_t, CHANNEL_SIZE> addr_in;
-  hls::stream<uint32_t,CHANNEL_SIZE> data_in;
-  hls::stream<uint32_t,CHANNEL_SIZE*10> instr_in;
+void init_mem(Bus* bus);
 
-} Memory;
-
-
-void init_mem(Memory* mem);
-uint8_t read_instr(Memory mem,uint16_t loc);
-void fetch(Memory* mem,hls::stream<uint32_t> &out);
-void load_program(Memory* mem);
 
 #endif

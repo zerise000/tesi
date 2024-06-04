@@ -10,7 +10,6 @@ RM := rm -rf
 -include sources.mk
 -include testbench/subdir.mk
 -include source/subdir.mk
--include solution/csim/build/obj/subdir.mk
 -include subdir.mk
 -include objects.mk
 

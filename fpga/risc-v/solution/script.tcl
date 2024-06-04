@@ -6,6 +6,7 @@
 ############################################################
 open_project risc-v
 set_top run_cpu
+add_files ../src/h_files/lib_bus.h
 add_files ../src/cpp_files/libcpu.cpp
 add_files ../src/h_files/libcpu.h
 add_files ../src/cpp_files/libmem.cpp
